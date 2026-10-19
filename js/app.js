@@ -294,7 +294,7 @@ function messageFrom(data) {
 function setLinks(text) {
   const href = waLink(text);
   const tg = tgLink(text);
-  ["headWa", "ctaWa", "footWa", "okWa"].forEach((id) => {
+  ["headWa", "ctaWa", "footWa", "okWa", "mobileWa", "navWa"].forEach((id) => {
     const node = document.getElementById(id);
     if (node) node.href = href;
   });
@@ -603,6 +603,7 @@ function route() {
   closeModals();
   const parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
   $("#nav").classList.remove("open");
+  document.body.classList.remove("menu-open");
   $(".burger")?.setAttribute("aria-expanded", "false");
   document.querySelectorAll(".nav a").forEach((link) => {
     const key = link.getAttribute("href").replace("#/", "");
@@ -642,7 +643,16 @@ document.body.addEventListener("click", (event) => {
   const action = node.dataset.action;
   if (action === "menu") {
     const open = $("#nav").classList.toggle("open");
+    document.body.classList.toggle("menu-open", open);
     node.setAttribute("aria-expanded", String(open));
+  }
+  if (action === "mobile-quote") {
+    openQuote({
+      brandId: $("#q-brand").value,
+      modelId: $("#q-model").value,
+      year: $("#q-year").value,
+      part: $("#q-part").value.trim(),
+    });
   }
   if (action === "region") {
     state.region = node.dataset.region;
@@ -742,4 +752,13 @@ route();
 
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   setInterval(tickSlide, 7000);
+}
+
+const mobileBar = document.querySelector(".mobile-bar");
+const searchCard = document.querySelector(".search-card");
+if (mobileBar && searchCard && "IntersectionObserver" in window) {
+  const watcher = new IntersectionObserver(([entry]) => {
+    mobileBar.classList.toggle("is-hidden", entry.isIntersecting);
+  }, { threshold: 0.15 });
+  watcher.observe(searchCard);
 }
