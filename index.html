@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>US PARTS — запчасти на американские авто из США</title>
+  <meta name="description" content="Оригинал и аналог на Chevrolet, Ford, Dodge, RAM, Jeep и Cadillac. Подбор по марке, модели и году. Доставка по Казахстану, России и Европе.">
+  <meta name="theme-color" content="#08090d">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2308090d'/%3E%3Cpath fill='%23ffd000' d='M16 4.2l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L16 19.2 9.9 22.9l1.7-6.9L6.2 11.4l7.1-.6z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-row">
+      <a class="logo" href="#/" aria-label="US PARTS, на главную">
+        <span class="logo-star" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2l2.6 6.2 6.7.6-5.1 4.3 1.6 6.5L12 16.4 6.2 19.8l1.6-6.5L2.7 9l6.7-.6z"/></svg>
+        </span>
+        <span>
+          <strong>US PARTS</strong>
+          <small>Автозапчасти под заказ</small>
+        </span>
+      </a>
+      <button class="burger" type="button" data-action="menu" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="#/catalog">Каталог</a>
+        <a href="#/offers">Спецпредложения</a>
+        <a href="#/delivery">Доставка</a>
+        <a href="#/quality">Оригинал и аналог</a>
+        <a href="#/contacts">Контакты</a>
+      </nav>
+      <div class="header-tools">
+        <div class="regions" role="group" aria-label="Регион доставки">
+          <button type="button" data-action="region" data-region="kz" class="on">KZ</button>
+          <button type="button" data-action="region" data-region="ru">RU</button>
+          <button type="button" data-action="region" data-region="eu">EU</button>
+        </div>
+        <a class="btn btn-gold btn-sm wa-head" id="headWa" href="https://wa.me/77000000000" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2A8.8 8.8 0 0 0 4.4 16.3L3.2 21l4.8-1.2A8.8 8.8 0 1 0 12 3.2zm4.7 12.4c-.2.6-1.1 1-1.8 1.1-.5.1-1.1.1-3.5-.7-2.9-1-4.8-4-4.9-4.2-.2-.2-1.3-1.7-1.3-3.2s.8-2.3 1.1-2.6c.3-.3.6-.4.9-.4h.6c.2 0 .4 0 .6.5.2.6.8 2 .8 2.1.1.2.1.3 0 .5-.1.2-.2.3-.3.5l-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.4.1.6-.1l.8-.9c.2-.2.4-.2.6-.1.2.1 1.5.7 1.8.8.2.1.4.2.4.3.1.3 0 .8-.2 1.1z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div id="home">
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img id="heroImg" alt="" src="assets/img/hero.jpg">
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker"><i></i> Подберём за 30 минут, ответим в WhatsApp</p>
+          <h1><span>Запчасти</span><span>на американские</span><span>авто <em>из США</em></span></h1>
+          <p class="lead" id="heroLead">Chevrolet, Ford, Dodge, RAM, Jeep, Cadillac. Оригинал и аналог, доставка по Казахстану и России.</p>
+          <div class="hero-dots" id="heroDots" role="tablist" aria-label="Фон"></div>
+        </div>
+        <form class="search-card" id="heroForm">
+          <div class="search-grid">
+            <label>Марка
+              <select id="q-brand" name="brand"></select>
+            </label>
+            <label>Модель
+              <select id="q-model" name="model"></select>
+            </label>
+            <label>Год
+              <select id="q-year" name="year"></select>
+            </label>
+          </div>
+          <label class="part-label">Что нужно
+            <span class="part-row">
+              <input id="q-part" name="part" type="text" placeholder="Например, передний бампер и правая фара" autocomplete="off">
+              <button class="btn btn-gold" type="submit">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+                Узнать цены
+              </button>
+            </span>
+          </label>
+          <ul class="stats">
+            <li><b>30 мин</b><span>подбор и цена</span></li>
+            <li><b>2 цены</b><span>оригинал и аналог</span></li>
+            <li><b id="statDays">14–21 день</b><span id="statPlace">до Алматы</span></li>
+          </ul>
+        </form>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marquee"></div>
+    </div>
+
+    <section class="section" id="offers">
+      <div class="container">
+        <div class="section-head">
+          <h2>Спецпредложения</h2>
+          <a href="#/catalog">Все объявления →</a>
+        </div>
+        <div class="offer-grid" id="offerGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Каталог по маркам</h2>
+            <p class="sub">Выберите марку и модель — подставим её в заявку, останется написать, какая деталь нужна.</p>
+          </div>
+        </div>
+        <div class="catalog">
+          <div class="brand-list" id="brandList"></div>
+          <div class="catalog-panel" id="catalogPanel"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="delivery">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Как деталь едет к вам</h2>
+            <p class="sub">Каждый этап видно в WhatsApp: присылаем фото с полки склада, трек и дату прибытия.</p>
+          </div>
+        </div>
+        <div class="journey">
+          <ol class="steps" id="steps"></ol>
+          <figure class="journey-photo">
+            <img src="assets/img/warehouse.jpg" alt="Склад автозапчастей: коробки на стеллажах">
+            <figcaption>
+              <b id="shipCaption">14–21 день</b>
+              <span id="shipNote">в среднем от заказа до выдачи в Алматы</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quality">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Две цены на каждую деталь</h2>
+            <p class="sub">Не навязываем дорогое: показываем оригинал и проверенный аналог, решаете вы.</p>
+          </div>
+        </div>
+        <div class="price-grid">
+          <article class="price-card">
+            <span class="eyebrow">Оригинал</span>
+            <h3>OEM от GM, Ford, Stellantis</h3>
+            <ul>
+              <li>Номер детали совпадает с каталогом</li>
+              <li>Заводская упаковка и маркировка</li>
+              <li>Для гарантийных машин и тюнинга</li>
+            </ul>
+          </article>
+          <article class="price-card analog">
+            <span class="eyebrow">Аналог</span>
+            <h3>Дешевле на 30–50%</h3>
+            <ul>
+              <li>Бренды, которые ставят в США: ACDelco, Motorcraft, Mopar, Bosch</li>
+              <li>Проверяем совместимость по каталогу марки</li>
+              <li>Гарантия как на оригинал</li>
+            </ul>
+          </article>
+          <figure class="price-photo">
+            <img src="assets/img/parts.jpg" alt="Тормозной диск, фара, свечи и фильтр">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacts">
+      <div class="cta-bg" aria-hidden="true">
+        <img src="assets/img/night.jpg" alt="">
+      </div>
+      <div class="container cta-grid">
+        <div>
+          <h2>Оставьте заявку — посчитаем за 30 минут</h2>
+          <p>Можно просто фото техпаспорта или старой детали в WhatsApp. Ответит менеджер, а не бот.</p>
+          <div class="cta-actions">
+            <a class="btn btn-gold" id="ctaWa" href="https://wa.me/77000000000" target="_blank" rel="noopener">Написать в WhatsApp</a>
+            <a class="btn btn-ghost" id="ctaTg" href="https://t.me/share/url?text=Здравствуйте!%20Нужны%20запчасти%20из%20США." target="_blank" rel="noopener">Telegram</a>
+          </div>
+        </div>
+        <form class="quote-card" id="ctaForm">
+          <label>Автомобиль
+            <input name="car" id="cta-car" type="text" placeholder="Chevrolet Camaro 2019" required>
+          </label>
+          <label>Что нужно
+            <input name="part" type="text" placeholder="Например, решётка радиатора" required>
+          </label>
+          <div class="two">
+            <label>Имя
+              <input name="name" type="text" autocomplete="name" required>
+            </label>
+            <label>Телефон
+              <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7" required>
+            </label>
+          </div>
+          <button class="btn btn-gold btn-block" type="submit">Получить цены →</button>
+          <p class="fine">Нажимая кнопку, вы соглашаетесь с <button type="button" data-action="privacy">политикой обработки данных</button>.</p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="logo" href="#/">
+            <span class="logo-star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.6 6.2 6.7.6-5.1 4.3 1.6 6.5L12 16.4 6.2 19.8l1.6-6.5L2.7 9l6.7-.6z"/></svg></span>
+            <span><strong>US PARTS</strong><small>Автозапчасти под заказ</small></span>
+          </a>
+          <p>Запчасти на американские автомобили из США с доставкой по Казахстану и России.</p>
+        </div>
+        <div>
+          <h3>Покупателям</h3>
+          <a href="#/delivery">Доставка</a>
+          <a href="#/quality">Оригинал и аналог</a>
+          <a href="#/offers">Спецпредложения</a>
+          <button type="button" data-action="privacy">Оплата и данные</button>
+        </div>
+        <div>
+          <h3>Бренды</h3>
+          <div id="footerBrands"></div>
+        </div>
+        <div>
+          <h3>Связаться</h3>
+          <a href="tel:+77000000000">+7 700 000-00-00</a>
+          <a id="footWa" href="https://wa.me/77000000000" target="_blank" rel="noopener">WhatsApp</a>
+          <a id="footTg" href="https://t.me/share/url?text=Здравствуйте!%20Нужны%20запчасти%20из%20США." target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+      <div class="container legal">Демонстрационный сайт по макету. Телефон, сроки и гарантия — для показа. Подбор по марке, модели и году.</div>
+    </footer>
+  </div>
+
+  <main id="detail" class="detail" hidden></main>
+
+  <div class="modal" id="quoteModal" hidden>
+    <div class="modal-backdrop" data-action="close"></div>
+    <form class="modal-card" id="quoteForm" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
+      <button class="icon-x" type="button" data-action="close" aria-label="Закрыть">×</button>
+      <h3 id="quoteTitle">Узнать цены</h3>
+      <p class="sub">Пришлём цены на оригинал и аналог в WhatsApp.</p>
+      <label>Автомобиль
+        <input name="car" id="m-car" type="text" required>
+      </label>
+      <label>Что нужно
+        <input name="part" id="m-part" type="text" placeholder="Например, передний бампер и правая фара" required>
+      </label>
+      <div class="two">
+        <label>Имя
+          <input name="name" type="text" autocomplete="name" required>
+        </label>
+        <label>Телефон
+          <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7" required>
+        </label>
+      </div>
+      <button class="btn btn-gold btn-block" type="submit">Отправить запрос →</button>
+      <p class="fine">Нажимая кнопку, вы соглашаетесь с <button type="button" data-action="privacy">политикой обработки данных</button>.</p>
+    </form>
+  </div>
+
+  <div class="modal" id="successModal" hidden>
+    <div class="modal-backdrop" data-action="close"></div>
+    <div class="modal-card success-card" role="dialog" aria-modal="true" aria-labelledby="okTitle">
+      <div class="ok-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.4 2.4L16.2 9"/></svg>
+      </div>
+      <h3 id="okTitle">Запрос принят</h3>
+      <p>Менеджер напишет в WhatsApp в течение 30 минут в рабочее время.</p>
+      <button class="btn btn-ghost btn-block" type="button" data-action="close">Хорошо</button>
+      <a class="text-link" id="okWa" href="https://wa.me/77000000000" target="_blank" rel="noopener">Написать сейчас в WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="modal" id="privacyModal" hidden>
+    <div class="modal-backdrop" data-action="close"></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="privTitle">
+      <button class="icon-x" type="button" data-action="close" aria-label="Закрыть">×</button>
+      <h3 id="privTitle">Как обрабатываем заявку</h3>
+      <p>В заявке достаточно марки, модели, года, названия детали, имени и телефона. По этим данным менеджер подбирает оригинал и аналог и отвечает в WhatsApp или Telegram.</p>
+      <p>Номер кузова не спрашиваем и не храним. Фото старой детали или техпаспорта можно прислать в чат, если так удобнее сверить номер запчасти.</p>
+      <p>Телефон на сайте указан для показа макета. Сообщение уходит только если вы сами открываете WhatsApp.</p>
+      <button class="btn btn-gold btn-block" type="button" data-action="close">Понятно</button>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
